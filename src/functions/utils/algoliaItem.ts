@@ -35,7 +35,7 @@ export const convertToAlgoliaItem =
   (allItems: ReadonlyMap<string, IContentItem>, expectedSlug: string) => (item: IContentItem): AlgoliaItem => ({
     id: item.system.id,
     elements: item.elements,
-    lastNameStartsWith: item.elements.last_name.value[0],
+    lastNameStartsWith: item.elements.last_name.value[0] ? item.elements.last_name.value[0] : "",
     system: item.system,
     type: item.system.type,
     codename: item.system.codename,
